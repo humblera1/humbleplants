@@ -1,0 +1,14 @@
+{
+    "name": "humblerat/app",
+    "description": "humbleplants",
+    "authors": [
+        {
+            "name": "humblerat",
+            "email": "humblerat@mail.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"app\\":"app/"}
+    }
+}
