@@ -8,6 +8,6 @@ class CatalogModel extends Model
 {
     public function __construct()
     {
-        echo "Экземпляр модели CatalogModel успешно создан <br>";
+        // echo "Экземпляр модели CatalogModel успешно создан <br>";
     }
 }

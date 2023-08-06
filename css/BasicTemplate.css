@@ -1,0 +1,38 @@
+/*----------------------------------------------------*/
+
+.super-grid{
+    grid-template-rows: 1fr auto 1fr;
+}
+
+.header-container{
+    background-color: var(--color-additional);
+    width: 100vw;
+    height: 4vw;
+    padding: 0%;
+
+    justify-content: space-between;
+}
+.home-link-container, .about-link-container{
+    padding:0;
+
+
+    height:100%;
+    width: 5vw;
+    border: 1px dashed grey;
+
+    margin: 0% 5%;
+    padding: 0;
+
+}
+
+.footer-container{
+    /* position: absolute;
+    bottom: 0%; */
+
+    font-size: clamp(12px, 2.5vw, 20px);
+    padding-left: 1vw;
+    padding-bottom: 1vw;
+
+    flex-direction: column;
+    align-items: flex-start;
+}

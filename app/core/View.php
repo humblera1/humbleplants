@@ -8,16 +8,14 @@ class View
     protected $templateName;
     protected $params;
 
-    public function __construct()
-    {
-        $this->templateName = 'Bare';
-    }
-    public function render($viewName, $params = null, $templateName)
+    
+    public function render($viewName, $templateName = 'BareTemplate', $params = null)
     {
         if (is_array($params)){
             extract($params);
         }
-        include '../app/templates'.$templateName.'.php';                                            //!!!        
+        
+        include 'app/templates/'.$templateName.'.php';                                            //!!!        
     }
 
 

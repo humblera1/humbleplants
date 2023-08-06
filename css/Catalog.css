@@ -1,0 +1,80 @@
+.page-container{
+    width:100vw;
+    height: auto;
+    background-color: var(--color-additional);
+    margin-top: 25vw;
+    margin-bottom: 5vw;
+
+    border-radius: 3vw;
+}
+.page-grid{
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 2fr 5fr;
+}
+.catalog-grid{
+    grid-template-rows: auto 1fr;
+}
+.sidebar-container{
+    padding: 5% 10%;
+}
+.catalog-container{
+    flex-wrap: wrap;
+    padding: 5% 5%;
+}
+.card-grid{
+    width: 15vw;
+    height: 21vw;
+    
+    margin: 10px;
+
+    border: 1px dashed grey;
+    border-radius: 2vw; 
+    
+    
+    box-sizing: content-box;
+
+    grid-template-rows: 4fr 1fr 2fr;
+}
+.pagination-container{
+    padding-bottom: 5%;
+}
+
+.page-numbers{
+    display:flex;
+    list-style-type: none;
+}
+.page-number{
+    padding: 8px;
+    margin: 8px;
+    cursor: pointer;
+}
+.page-number-active{
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.image-container{
+    height: 12vw;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    /* padding: 5%; */
+    box-sizing: border-box;
+}
+img{
+    object-fit: contain;
+    height: 100%;
+    width: 70%;
+
+    transform: rotate(5deg);    
+}
+.name-container{
+    font-size: clamp(12px, 2.5vw, 20px);
+    font-weight: 800;
+}
+.description-container{
+    font-size: clamp(12px, 2vw, 18px);
+    padding: 0 10%;
+}

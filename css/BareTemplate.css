@@ -1,0 +1,36 @@
+:root {
+    --color-primary: #d7dcd6;
+    --color-additional: #f1f0eb;
+}
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+body::-webkit-scrollbar{ 
+    display: none; 
+}
+@font-face {
+    font-family: "Comfortaa"; 
+    
+    src: url("../fonts/Comfortaa-VariableFont_wght.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+body{
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+    background-color: var(--color-primary);
+    font-family: "Comfortaa";
+}       
+[class*="container"]{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-sizing: border-box;
+    padding: 5% 10%;   
+}
+[class*="grid"]{
+    display:grid;
+}
