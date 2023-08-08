@@ -9,13 +9,9 @@ namespace app\core;
 
 */
 
-class Model
+abstract class Model
 {
     public $data;
 
-    public function getData(string $query)
-    {
-        $this->data = $db->query($query)->fetchAll(PDO::FETCH_ASSOC); //логика извлечения данных в массив
-        return $this->data;
-    }
+    abstract public function getData(string $query);
 }

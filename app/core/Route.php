@@ -48,7 +48,7 @@ class Route
         
                     
         
-                    $controller->showOne($this->param);
+                    $controller->actionShowOne($this->param);
                 }
             }else{
                 echo "<b>Упс! Кажется, запрошенной вами страницы не существует</b>";               

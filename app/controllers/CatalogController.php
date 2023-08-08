@@ -23,23 +23,24 @@ class CatalogController extends Controller
 
     public function actionDefault()
     {
-        // $this->data = $this->model->getData('SELECT * FROM plants_table');
-        // echo "Вызвано действие по умолчанию. Здесь содержится логика отображения каталога";
-
-        $this->view->render('Catalog', 'BasicTemplate');
+        $this->data = $this->model->getData('SELECT id, name, latin_name, short_description FROM catalog');
+        
+        $this->view->render('Catalog', 'BasicTemplate', $this->data);
     }
 
     public function actionShowOne(string $plantName)
     {
-        $this->plantName = $plantName; //?
+        //?
 
-        // try{
-        //     $this->data = $this->model->getData("SELECT id, name, full_description FROM plant_table WHERE name = $plantName");
-        //     $this->view-render('Plant', $data);
-        // }catch(Error){
-        //     echo 'Oops';
-        // }
+        
+        $this->data = $this->model->getWithPrepare("SELECT id, name, short_description, full_description, light, watering, difficulty FROM catalog WHERE latin_name = ?", $plantName);
+            
+        if (empty($this->data)) echo 'oops';
+        else $this->view->render('Plant', 'BasicTemplate', $this->data);
+        
+            
+        
 
-        // echo "Вызвано действие ShowOne. Здесь содержится логика проверки существования и отображения страницы растения {$plantName}";
+
     }
 }

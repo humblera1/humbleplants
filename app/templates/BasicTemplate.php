@@ -9,12 +9,13 @@
 </head>
 <body>
     <div class="super-grid">
-        <header>
+        
             <div class="header-container">
-                <a href="/" class="home-link-container"></a>
-                <a href="" class="about-link-container"></a>
+                <a href="javascript:history.back()" class="arrow-link-container"><img src="../images/icons/arrow-icon.png" alt="arrow-pic" class="arrow-link"></a>
+                <a href="/" class="home-link-container"><img src="../images/icons/home-icon.png" alt="house-pic" class="home-link"></a>
             </div>
-        </header>
+        
+        
         <?php include "BareTemplate.php" ?>        
         <footer>
             <div class="footer-container">

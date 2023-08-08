@@ -1,20 +1,18 @@
-console.log('hello, world');
-let amount = Array.from(document.querySelectorAll('.card-grid')).length;
-console.log(amount);
-
-
 function fetchData(data){
     const plants = JSON.parse(data);
     console.log(plants);
 
-
+    let charCount = 50;
+    if (window.innerWidth < 1200) charCount = 40;
 
     function makeSingleCard(plantData){
-        const card = document.createElement('div');
+        const card = document.createElement('a');
+        card.href = "/catalog/" + plantData.latin_name;
         card.classList.add('card-grid');
         
         const img = document.createElement('img');
-        img.src = '../images/' + plantData.id + '.png';
+        img.src = '../images/catalog/' + plantData.id + '.png';
+        img.alt = plantData.latin_name + ' ' + 'pic';
         const image = document.createElement('div');
         image.classList.add('image-container');
         image.appendChild(img);
@@ -27,14 +25,14 @@ function fetchData(data){
     
         const description = document.createElement('div');
         description.classList.add('description-container');
-        description.innerText = plantData.short_description.substring(0, 40) + '...';
+        description.innerText = plantData.short_description.substring(0, charCount) + '...';
         card.appendChild(description);
     
         return card;
     }
 
     const currentPage = 1;
-    const amountPerPage = 6;
+    const amountPerPage = 9;
 
     let catalogContainer = document.querySelector('.catalog-container');
     

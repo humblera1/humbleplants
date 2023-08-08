@@ -1,3 +1,10 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    opacity: 95%;
+}
 .page-container{
     width:100vw;
     height: auto;
@@ -28,13 +35,23 @@
     
     margin: 10px;
 
-    border: 1px dashed grey;
+    
     border-radius: 2vw; 
     
     
-    box-sizing: content-box;
+    box-sizing: border-box;
+   
 
     grid-template-rows: 4fr 1fr 2fr;
+}
+.card-grid:hover{
+    padding: 0; 
+    animation: shadow 0.3s forwards;
+}  
+@keyframes shadow {
+    
+    100% {
+          box-shadow: 0px 10px 15px -5px rgba(52, 80, 102, 0.2);}
 }
 .pagination-container{
     padding-bottom: 5%;
@@ -60,7 +77,7 @@
 
     display: flex;
     justify-content: center;
-    /* padding: 5%; */
+    padding: 0;
     box-sizing: border-box;
 }
 img{
@@ -71,10 +88,13 @@ img{
     transform: rotate(5deg);    
 }
 .name-container{
-    font-size: clamp(12px, 2.5vw, 20px);
+    font-size: clamp(14px, 1.5vw, 20px);
     font-weight: 800;
+    padding: 5% 10%;
 }
 .description-container{
-    font-size: clamp(12px, 2vw, 18px);
+    font-size: clamp(12px, 1.2vw, 16px);
+    box-sizing: border-box;
     padding: 0 10%;
+    padding-bottom: 5%;
 }
