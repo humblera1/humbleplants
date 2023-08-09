@@ -16,31 +16,31 @@ class CatalogController extends Controller
 
     public function __construct()
     {
-        // echo "Экземпляр класса CatalogController успешно создан и готов к работе </br>";
         $this->view = new View();
         $this->model = new CatalogModel();
     }
 
     public function actionDefault()
-    {
-        $this->data = $this->model->getData('SELECT id, name, latin_name, short_description FROM catalog');
-        
-        $this->view->render('Catalog', 'BasicTemplate', $this->data);
+    {         
+        $data = json_decode(file_get_contents('php://input'),true);
+        if (!empty($data)){
+            echo json_encode($this->model->getWithFilters($data), JSON_UNESCAPED_UNICODE);
+            // echo $this->model->getWithFilters($data);
+
+        }else{
+        $this->data = $this->model->getData('SELECT id, name, latin_name, short_description, category FROM catalog');        
+        $this->view->render('Catalog', 'BasicTemplate', $this->data);}        
     }
 
     public function actionShowOne(string $plantName)
     {
-        //?
 
-        
         $this->data = $this->model->getWithPrepare("SELECT id, name, short_description, full_description, light, watering, difficulty FROM catalog WHERE latin_name = ?", $plantName);
             
         if (empty($this->data)) echo 'oops';
-        else $this->view->render('Plant', 'BasicTemplate', $this->data);
-        
-            
-        
-
-
+        else $this->view->render('Plant', 'BasicTemplate', $this->data);  
+    
     }
+
+    
 }

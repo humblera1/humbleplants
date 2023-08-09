@@ -1,6 +1,10 @@
 function fetchData(data){
     const plants = JSON.parse(data);
-    console.log(plants);
+
+    let catalogContainer = document.querySelector('.catalog-container');
+    
+
+    
 
     let charCount = 50;
     if (window.innerWidth < 1200) charCount = 40;
@@ -34,7 +38,7 @@ function fetchData(data){
     const currentPage = 1;
     const amountPerPage = 9;
 
-    let catalogContainer = document.querySelector('.catalog-container');
+    // let catalogContainer = document.querySelector('.catalog-container');
     
     displayCards(plants, 0, amountPerPage);
     makePagination(plants, amountPerPage);
@@ -70,7 +74,7 @@ function fetchData(data){
 
         
         const paginationContainer = document.querySelector('.pagination-container');
-        console.log(paginationContainer);
+        
         paginationContainer.appendChild(ul);
     }
 
@@ -88,52 +92,3 @@ function fetchData(data){
         }
     }
 }
-
-
-
-
-// let container = document.querySelectorAll('.catalog-container');
-
-
-// function displayCards(cards, perPage, page){
-//     page--;
-//     const start = perPage*page;
-//     const end = start + perPage;
-//     const container = document.querySelector('.catalog-container');
-//     container.innerHTML='';
-
-//     for (let i=start; i<end; i++){
-//         container.appendChild(cards[i]);
-//    }
-    
-    
-    
-
-// }
-
-// function makePagination(cards, perPage){
-//     const container = document.querySelector('.pagination-container');
-//     const pages = Math.ceil(cards.length / perPage);
-
-//     const ul = document.createElement('ul');
-//     ul.classList.add('page-numbers');
-    
-//     for(let i=0; i<pages; i++){
-//         const li = document.createElement('li');
-//         li.classList.add('page-number');
-//         li.innerText = i+1;
-
-        
-
-//         li.addEventListener('click', () => {
-//             const currentPage = i+1;
-//             displayCards(cards, perPage, currentPage);
-//         });
-
-//         ul.appendChild(li);
-//     }
-
-//     container.appendChild(ul);
-// }
-
-// makePagination(cards, 3);
