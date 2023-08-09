@@ -43,7 +43,7 @@
     border: 1px dashed red
 } */
 .image-container{
-    align-self: start;
+    align-self: center;
     /* border: 1px dotted #515151; */
     height: 35vw;
     width: 25vw;

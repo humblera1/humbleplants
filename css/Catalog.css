@@ -24,6 +24,8 @@ a:hover{
 }
 .sidebar-container{
     padding: 5% 10%;
+    flex-direction: column;
+    align-items: start;
 }
 .catalog-container{
     flex-wrap: wrap;
