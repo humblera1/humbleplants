@@ -1,6 +1,14 @@
+.welcome-container{
+    font-size: clamp(25px, 3vw, 35px);
+    margin-top: 10vw;
+}
+label{
+    cursor: pointer;
+}
 a{
     text-decoration: none;
     color: black;
+
 }
 a:hover{
     opacity: 95%;
@@ -9,7 +17,7 @@ a:hover{
     width:100vw;
     height: auto;
     background-color: var(--color-additional);
-    margin-top: 25vw;
+    margin-top: 5vw;
     margin-bottom: 5vw;
 
     border-radius: 3vw;
@@ -23,9 +31,77 @@ a:hover{
     grid-template-rows: auto 1fr;
 }
 .sidebar-container{
-    padding: 5% 10%;
+    padding: 20% 10%;
     flex-direction: column;
     align-items: start;
+    align-self: start;
+}
+legend{
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-weight: 1000;
+    padding: 10% 5% 2% 5%;
+    opacity: 95%;
+}
+.row{
+    display: flex;
+    font-size: clamp(16px, 1.3vw, 18px);
+    padding: 1% 5%;
+    box-sizing: content-box;
+    
+}
+.category-label{
+    opacity: 80%;
+    padding-left: 5%;
+}
+.row:hover{
+    font-weight: 600;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+.light-radios, .watering-radios, .difficulty-radios, .categories-fieldset{
+    border: 1px solid rgb(194, 193, 193);
+    border-top: none;
+    border-left: none;
+    border-radius: 2vw;
+
+    
+
+    padding: 5% 0;
+}
+.categories-fieldset{
+    margin-bottom: 30%;
+}
+
+.radios-container{
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    
+}
+.radio input[type="radio"] {
+    display: none;
+}
+.radio{
+    display: flex;
+    font-size: clamp(16px, 1.3vw, 18px);
+    padding: 1% 5%;
+    box-sizing: content-box;
+}
+.light-radio-label, .watering-radio-label, .difficulty-radio-label{
+    
+    opacity: 80%;
+    padding-left: 5%;
+    border-left: 2px solid var(--color-additional);
+}
+.radio label:hover{    
+    font-weight: 600;
+}
+.bold-label{
+    border-left: 1.5px solid rgb(136, 136, 136);
+    opacity: 75%;
+    font-weight: 800;
 }
 .catalog-container{
     flex-wrap: wrap;
@@ -52,11 +128,11 @@ a:hover{
 }  
 @keyframes shadow {
     
-    100% {
-          box-shadow: 0px 10px 15px -5px rgba(52, 80, 102, 0.2);}
+    100% {box-shadow: 0px 10px 15px -5px rgba(52, 80, 102, 0.2);}
 }
 .pagination-container{
     padding-bottom: 5%;
+    align-self: end;
 }
 
 .page-numbers{
@@ -72,7 +148,6 @@ a:hover{
     font-weight: 800;
     text-decoration: underline;
 }
-
 .image-container{
     height: 12vw;
     width: 100%;

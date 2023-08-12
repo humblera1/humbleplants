@@ -28,7 +28,7 @@ class CatalogController extends Controller
             // echo $this->model->getWithFilters($data);
 
         }else{
-        $this->data = $this->model->getData('SELECT id, name, latin_name, short_description, category FROM catalog');        
+        $this->data = $this->model->getData('SELECT id, name, latin_name, short_description, category FROM catalog ORDER BY category ASC');        
         $this->view->render('Catalog', 'BasicTemplate', $this->data);}        
     }
 

@@ -76,8 +76,7 @@ function fetchData(data){
         }
 
         
-        const paginationContainer = document.querySelector('.pagination-container');
-        
+        const paginationContainer = document.querySelector('.pagination-container');        
         paginationContainer.appendChild(ul);
     }
 
