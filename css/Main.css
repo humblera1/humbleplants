@@ -334,7 +334,7 @@
         width: 13%;
     }
     .icon-puzzle{
-        padding-right: 0%;
+        padding-right: 1%;
         
     }
 
@@ -451,7 +451,7 @@
     transition: all linear 0.6s;        
 }
 [class*="img"]:hover{
-    filter: brightness(1.2) drop-shadow(-10px 20px 3px #aaa9a9);
+    filter: brightness(1.2) drop-shadow(-10px 20px 3px var(--color-grey));
     
 }
 .img-3-1{
@@ -795,7 +795,7 @@
     opacity: 80%;
     grid-row-start: 2;
     background-color: var(--color-primary);
-    box-shadow: 0px 0px 10px 0px  grey;
+    box-shadow: 0px 0px 10px 0px  var(--color-grey);
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 1fr 1fr 4fr 1fr 1fr;    
@@ -842,7 +842,7 @@
     height: 8vw;
     width: 25vw;
 
-    border: 1px rgb(187, 187, 187) solid;
+    border: 1px var(--color-grey) solid;
     border-radius: 2vw;
 
     font-family: "Comfortaa";
@@ -962,6 +962,7 @@
         align-items: flex-end;
     }
     .footer-image{
+        z-index: -1;
         position: absolute;
         width: 50vw;
     }

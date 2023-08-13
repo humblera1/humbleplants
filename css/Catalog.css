@@ -1,6 +1,6 @@
 .welcome-container{
     font-size: clamp(25px, 3vw, 35px);
-    margin-top: 10vw;
+    margin-top: 30vw;
 }
 label{
     cursor: pointer;
@@ -8,10 +8,9 @@ label{
 a{
     text-decoration: none;
     color: black;
-
 }
 a:hover{
-    opacity: 95%;
+    filter: brightness(1.1);
 }
 .page-container{
     width:100vw;
@@ -19,32 +18,40 @@ a:hover{
     background-color: var(--color-additional);
     margin-top: 5vw;
     margin-bottom: 5vw;
-
     border-radius: 3vw;
+}
+.welcome-container{
+    font-weight: 800;
+    opacity: 80%;
+    text-align: center;
+    padding-bottom: 10%;
 }
 .page-grid{
     height: 100%;
     width: 100%;
-    grid-template-columns: 2fr 5fr;
+    grid-template-columns: 1fr;
 }
 .catalog-grid{
     grid-template-rows: auto 1fr;
 }
-.sidebar-container{
-    padding: 20% 10%;
-    flex-direction: column;
-    align-items: start;
+.sidebar-container{                                                         /* */
+    display: none;
+    padding: 5% 10%;
+    flex-direction: column;    
     align-self: start;
+    align-items: stretch
 }
 legend{
-    font-size: clamp(16px, 1.5vw, 20px);
+    /* font-size: clamp(16px, 1.5vw, 20px); */
+    font-size: clamp(20px, 3.5vw, 28px);
     font-weight: 1000;
     padding: 10% 5% 2% 5%;
     opacity: 95%;
 }
 .row{
     display: flex;
-    font-size: clamp(16px, 1.3vw, 18px);
+    /* font-size: clamp(16px, 1.3vw, 18px); */
+    font-size: max(20px, 2.8vw);
     padding: 1% 5%;
     box-sizing: content-box;
     
@@ -61,7 +68,7 @@ input[type="checkbox"]{
     display: none;
 }
 .light-radios, .watering-radios, .difficulty-radios, .categories-fieldset{
-    border: 1px solid rgb(194, 193, 193);
+    border: 1px solid var(--color-grey); 
     border-top: none;
     border-left: none;
     border-radius: 2vw;
@@ -71,7 +78,7 @@ input[type="checkbox"]{
     padding: 5% 0;
 }
 .categories-fieldset{
-    margin-bottom: 30%;
+    margin-bottom: 20%;                                 /* */
 }
 
 .radios-container{
@@ -85,7 +92,7 @@ input[type="checkbox"]{
 }
 .radio{
     display: flex;
-    font-size: clamp(16px, 1.3vw, 18px);
+    font-size: max(20px, 2.6vw);
     padding: 1% 5%;
     box-sizing: content-box;
 }
@@ -99,22 +106,26 @@ input[type="checkbox"]{
     font-weight: 600;
 }
 .bold-label{
-    border-left: 1.5px solid rgb(136, 136, 136);
+    border-left: 1.5px solid var(--color-grey); 
     opacity: 75%;
     font-weight: 800;
 }
 .catalog-container{
     flex-wrap: wrap;
-    padding: 5% 5%;
+    padding: 5% 0;                                 /* 5% 5%*/
 }
 .card-grid{
-    width: 15vw;
-    height: 21vw;
     
-    margin: 10px;
+    min-width: 240px;
+    min-height: 350px;
+    width: 15vw;
+    height: 24vw;
+    
+    margin: 20px 10px;
 
     
-    border-radius: 2vw; 
+    
+    box-shadow: 4px 4px 12px 4px rgba(210, 213, 216, 0.281);
     
     
     box-sizing: border-box;
@@ -128,7 +139,10 @@ input[type="checkbox"]{
 }  
 @keyframes shadow {
     
-    100% {box-shadow: 0px 10px 15px -5px rgba(52, 80, 102, 0.2);}
+    100% {box-shadow: 0px 10px 15px -5px var(--color-grey);}
+}
+.card-grid:active{
+    filter: brightness(1.25);
 }
 .pagination-container{
     padding-bottom: 5%;
@@ -149,6 +163,8 @@ input[type="checkbox"]{
     text-decoration: underline;
 }
 .image-container{
+    min-width: 240px;
+    min-height: 200px;
     height: 12vw;
     width: 100%;
 
@@ -157,7 +173,7 @@ input[type="checkbox"]{
     padding: 0;
     box-sizing: border-box;
 }
-img{
+.catalog-container img{
     object-fit: contain;
     height: 100%;
     width: 70%;
@@ -165,13 +181,129 @@ img{
     transform: rotate(5deg);    
 }
 .name-container{
-    font-size: clamp(14px, 1.5vw, 20px);
+    /* font-size: clamp(18px, 1.5vw, 20px); */
+    font-size: max(20px, 2.6vw);
     font-weight: 800;
-    padding: 5% 10%;
+    padding: 0 10% 0 10%;
+    text-align: center;
+    flex-wrap: wrap;
+    align-content: end;
+    opacity: 90%;
+
 }
 .description-container{
-    font-size: clamp(12px, 1.2vw, 16px);
+    /* font-size: clamp(15px, 1.2vw, 16px); */
+    font-size: max(18px, 2.4vw);
     box-sizing: border-box;
-    padding: 0 10%;
-    padding-bottom: 5%;
+    
+    padding: 5% 10%;
+    flex-wrap: wrap;
+    align-content: start;
+    opacity: 90%;
+}
+
+.show{
+    display: flex;
+    opacity: 0;
+    animation: ani 1s forwards;
+
+}
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.drop-image{
+    opacity: 30%;
+    height: 1.5rem;
+}
+.drop-image img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.dropdown-btn{
+    font-family: "Comfortaa";
+    font-weight: 800;
+    opacity: 50%;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--color-grey);
+    border-radius: 10px;    
+}
+.dropdown-btn:active{
+    background-color: var(--color-primary);
+}
+
+@media(min-width: 768px){
+    .welcome-container{
+        margin-top: 5vw;
+    }
+    .page-grid{
+
+
+    grid-template-columns: auto 1fr;
+}
+    .button-container{
+        display: none;
+    }
+    .sidebar-container{ 
+    min-width: 320px;                                                        /* */
+    display: flex;
+    padding: 5% 10%;
+    flex-direction: column;    
+    align-self: start;
+    align-items: center;
+    }
+    legend{
+    font-size: clamp(16px, 1.5vw, 20px);
+
+}
+    .row{
+    font-size: clamp(16px, 1.3vw, 18px);
+
+    
+    }
+    .radio{
+    
+    font-size: clamp(16px, 1.3vw, 18px);
+
+}
+    .catalog-container{
+    
+    padding: 5% 0;                                 /* 5% 5%*/
+    }   
+    .card-grid{
+        min-width: 200px;
+        min-height: 320px;
+        width: 15vw;
+        height: 22vw;
+        
+    }
+    .name-container{
+        font-size: clamp(18px, 1.5vw, 20px);
+        padding-top: 5%;
+    }
+    .description-container{
+        font-size: clamp(14px, 1vw, 16px);
+    }
+    .image-container{
+        align-items: flex-end;
+        min-width: 200px;
+        min-height: 180px;
+        height: 12vw;
+        width: 100%;
+            
+    }
+    .catalog-container img{
+    object-fit: contain;
+    height: 100%;
+    width: 70%;
+
+    transform: rotate(5deg);    
+}
+
+
 }

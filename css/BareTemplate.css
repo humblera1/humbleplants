@@ -1,6 +1,7 @@
 :root {
     --color-primary: #d7dcd6;
     --color-additional: #f1f0eb;
+    --color-grey: #c3c3c3;
 }
 * {
 	padding: 0px;

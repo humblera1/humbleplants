@@ -1,7 +1,9 @@
-<h1>articles page!</h1>
-<div class="page-container">
-    <div class="articles-container">
 
+<div class="page-container">
+<div class="page-title-container"><h1>Добро пожаловать на страницу статей</h1></div>
+    
+    <div class="articles-container">
+    
 
         
     <?php foreach($params as $article): ?>

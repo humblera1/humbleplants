@@ -24,8 +24,7 @@ class ArticlesModel extends Model
     {
         
         $statement = $this->db->prepare($query);        
-        $statement->execute([$id]);
-       
+        $statement->execute([$id]);       
         
         $this->data = $statement->fetch(PDO::FETCH_ASSOC);
         

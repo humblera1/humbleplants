@@ -158,10 +158,18 @@ function makeFiltration(){
 }
 
 function addListeners(){
-    lightLabels = document.querySelectorAll('.light-radio-label');
-    wateringLabels = document.querySelectorAll('.watering-radio-label');
-    difficultyLabels = document.querySelectorAll('.difficulty-radio-label');
-    categoryLabels = document.querySelectorAll('.category-label');
+    let lightLabels = document.querySelectorAll('.light-radio-label');
+    let wateringLabels = document.querySelectorAll('.watering-radio-label');
+    let difficultyLabels = document.querySelectorAll('.difficulty-radio-label');
+    let categoryLabels = document.querySelectorAll('.category-label');
+
+    let dropdownButton = document.querySelector('.dropdown-btn');
+    let sidebar = document.querySelector('.sidebar-container');
+
+    dropdownButton.addEventListener('click', () => {
+        console.log('на меня нажали!');
+        sidebar.classList.toggle('show');
+    })
 
     let prevLight = null;
     lightLabels.forEach((label) => {

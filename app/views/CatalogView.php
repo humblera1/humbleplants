@@ -2,6 +2,15 @@
 <div class="page-container">
 
     <div class="page-grid">
+        <div class="button-container">
+            
+            <button class="dropdown-btn">
+            <div class="drop-image"><img src="../images/catalog/drop.png" alt=""></div>
+            <p>Показать фильтры</p>
+            <!-- <div class="drop-image"><img src="../images/catalog/drop.png" alt=""></div> -->
+            </button>
+
+        </div>
         <div class="sidebar-container">
 
             <?php $categories = array_unique(array_column($params, 'category')); ?>

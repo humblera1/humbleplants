@@ -27,7 +27,7 @@ if($params['difficulty'] === 1){
 ?>
 <div class="content-grid">
         <div class="left-grid">
-            <div class="title-container"><p><?php echo htmlspecialchars($params['name']); ?></p></div>
+            <div class="title-container"><h1><?php echo htmlspecialchars($params['name']); ?></h1></div>
             <div class="description-container"><p><?= htmlspecialchars($params['short_description']); ?></p></div>
         </div>
 

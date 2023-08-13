@@ -172,19 +172,22 @@
             <img src="images/mainpage/5.png" alt=""  class="fifth-pic">
         </div>
 
-        <div class="fifth-grid">                                
+        <div class="fifth-grid">
+            <form method='post'>                                
             <div class="form">
                 <div class="fifth-text-container"><p>Обратная связь</p></div>
                 
                 <div class="fields-container">
-                    <input type="text" class="field-name" placeholder="Ваше имя..." required>
-                    <input type="email" class="field-email" placeholder="Ваш email...">
-                    <input type="text" class="field-comment" placeholder="Ваши пожелания...">
+                    <input type="text" name="name" class="field-name" placeholder="Ваше имя..." required>
+                    <input type="email" name="email" class="field-email" placeholder="Ваш email..." required>
+                    <input type="text" name="message" class="field-comment" placeholder="Ваши пожелания..." required>
 
                 </div>
 
-                <div class="button-container"><input type="button" value="Отправить" class="fifth-btn"></div>
+                <div class="button-container"><input type="submit" value="Отправить" class="fifth-btn"></div>
             </div>
+            </form>
+
        </div>   
     </div>
 

@@ -1,0 +1,32 @@
+.title-container{
+    text-align: center;
+    padding: 10% 10% 5% 10%;
+    font-weight: 800;
+}
+.title-container h1{
+    font-size: clamp(25px, 2.7vw, 32px);
+}
+.content-container{
+    padding: 5% 15%;
+    flex-direction: column;
+    font-size: clamp(16px, 2vw, 20px);   
+}
+.content-container p{
+    margin-bottom: 3%;
+    line-height: 140%;
+    text-align: start;
+}
+.content-title-container{   
+    padding: 5% 0 0 0;
+    font-weight: 800;
+}
+@media(min-width: 768px){
+    .title-container{
+        padding: 10% 10% 0 10%;
+    }
+}
+@media(min-width: 1200px){
+    .content-container{
+        padding: 5% 25%;
+    }
+}
