@@ -2,4 +2,4 @@
 <div class="content-container">
     <?= $params['content']; ?>
 </div>
-<link rel="stylesheet" href="../css/Article.css">
+<link rel="stylesheet" href="/css/Article.css">

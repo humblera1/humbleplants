@@ -3,121 +3,51 @@
 namespace app\models;
 
 use app\core\Model;
-use PDO;
+use app\core\Db;
 
 
 
 class CatalogModel extends Model
 {
-    public $db;
-    
+    private $db;        
 
     public function __construct()
     {       
-        $this->db = new PDO("mysql:host=localhost;dbname=humbleplants", "root", "4815162342");
+        $this->db = new Db();
     }
 
-    public function getData(string $query)
+    public function getPlant($plantName)
     {
-        $this->data = $this->db->query($query)->fetchAll(PDO::FETCH_ASSOC); 
-        return $this->data;
+        $query = "SELECT id, name, short_description, full_description, light, watering, difficulty FROM catalog WHERE latin_name = ?";
+        $this->data = $this->db->getData($query, [$plantName]);         
+        return ($this->data);          
     }
 
-    public function getWithPrepare(string $query, $plantName)
-    {
-        
-        $statement = $this->db->prepare($query);
-        
-        $statement->bindParam(1, $plantName, PDO::PARAM_STR);
-        $statement->execute();
-        
-        $this->data = $statement->fetch(PDO::FETCH_ASSOC);
-        
-
-        return $this->data;
-    }
-
-    public function getWithFilters($filters){
-        
+    public function getPlants($filters = []){        
         $query = 'SELECT id, name, latin_name, short_description, category FROM catalog';
-        $where = '';
         $params = [];
-
-        $categories = $filters['category'];
-
-        $placeholders = '?';     
-        for ($i=0; $i<count($categories)-1; $i++){
-            $placeholders .= ',?';
-        }
-        
-
-        
-        $whereCategory = '';
-        if (!empty($categories)){
-            $whereCategory = 'WHERE category IN ()';
-            $pos = strpos($whereCategory, '(') + 1;
-            $placeholders = '?';
-            for ($i=0; $i<count($categories)-1; $i++){
-                $placeholders .= ',?';
-            }
-            $whereCategory = substr_replace($whereCategory, $placeholders, $pos, 0);
-            $where .= $whereCategory;
-            $params = array_merge($params, $categories);
-            
-        }
-        
-
-        if (isset($filters['light'])) $light = $filters['light'];
-        $whereLight = '';
-        if (!empty($light)){
-            if (empty($where)){
-                $whereLight = 'WHERE light = ?';
-            }else{
-                $whereLight = ' AND light = ?';
-            }
-            $where .= $whereLight;
-            $params[] = $light;
-        }
-
-        if (isset($filters['watering'])) $watering = $filters['watering'];
-        $whereWatering = '';
-        if (!empty($watering)){
-            if (empty($where)){
-                $whereWatering = 'WHERE watering = ?';
-            }else{
-                $whereWatering = ' AND watering = ?';
-            }
-            $where .= $whereWatering;
-            $params[] = $watering;
-        }
-
-        if (isset($filters['difficulty'])) $difficulty = $filters['difficulty'];
-        $whereDifficulty = '';
-        if (!empty($difficulty)){
-            if (empty($where)){
-                $whereDifficulty = 'WHERE difficulty = ?';
-            }else{
-                $whereDifficulty = ' AND difficulty = ?';
-            }
-            $where .= $whereDifficulty;
-            $params[] = $difficulty;
-        }
-
-        
- 
-        $query .= ' ' . $where . ' ' . 'ORDER BY category ASC';
-        $statement = $this->db->prepare($query);
-        $statement->execute($params);
-        $this->data = $statement->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($filters)){
+            $whereStatement = '';                
+            foreach ($filters as $key => $value){
+                if(!empty($value)){
+                    if(is_array($value)){                    
+                        $categories = $value;
+                        $placeholders = rtrim(str_repeat('?,', count($categories)), ',');
+                        $whereStatement .= "WHERE category IN ($placeholders)";
+                        $params = array_merge($params, $categories);
+                    }else{
+                        if (empty($whereStatement)){
+                            $whereStatement .= "WHERE $key=?";                        
+                        }else{
+                            $whereStatement .= " AND $key=?";
+                        }
+                        $params[] = $value;                    
+                    }                
+                }
+            }          
+            $query .= ' ' . $whereStatement . ' ' . 'ORDER BY category ASC';
+        }        
+        $this->data = $this->db->getData($query, $params);
         return ($this->data);
-
-
-
-
-        
-
-        
-        // return $this->data;
-
     }
 }

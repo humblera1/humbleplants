@@ -3,32 +3,26 @@
 namespace app\models;
 
 use app\core\Model;
-use PDO;
+use app\core\Db;
 
 class ArticlesModel extends Model
 {
-    public $db;
+    private $db;
 
     public function __construct()
     {
-        $this->db = new PDO("mysql:host=localhost;dbname=humbleplants", "root", "4815162342");
+        $this->db = new Db();
     }
 
-    public function getData(string $query)
+    public function getArticles()
     {
-        $this->data = $this->db->query($query)->fetchAll(PDO::FETCH_ASSOC); 
-        return $this->data;
+        $query = "SELECT id, title FROM articles";        
+        return $this->db->getData($query);
     }
 
-    public function getWithPrepare(string $query, $id)
+    public function getArticle($id)
     {
-        
-        $statement = $this->db->prepare($query);        
-        $statement->execute([$id]);       
-        
-        $this->data = $statement->fetch(PDO::FETCH_ASSOC);
-        
-
-        return $this->data;
+        $query = "SELECT title, content FROM articles WHERE id = ?";      
+        return $this->db->getData($query, [$id]);
     }
 }

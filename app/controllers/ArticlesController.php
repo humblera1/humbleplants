@@ -8,9 +8,9 @@ use app\models\ArticlesModel;
 
 class ArticlesController extends Controller
 {
-    public $view;
-    public $model;
-    public $data;
+    private $view;
+    private $model;
+    private $data;
 
     public function __construct()
     {
@@ -20,17 +20,17 @@ class ArticlesController extends Controller
 
     public function actionDefault()
     {         
-        $this->data = $this->model->getData('SELECT id, title FROM articles');        
-        $this->view->render('Articles', 'BasicTemplate', $this->data);
+        $this->data = $this->model->getArticles();        
+        $this->view->render('Articles', 'BasicTemplate', $this->data, 'Статьи');
     }
 
-    public function actionShowOne(string $id)
+    public function actionShowOne(int $id)
     {
-
-        $this->data = $this->model->getWithPrepare("SELECT title, content FROM articles WHERE id = ?", $id);
-            
-        if (empty($this->data)) echo 'oops';
-        else $this->view->render('Article', 'BasicTemplate', $this->data);  
-    
+        $this->data = $this->model->getArticle($id)[0];            
+        if (empty($this->data)){
+            $this->view->render('Exception', 'BasicTemplate');
+        }else{
+            $this->view->render('Article', 'BasicTemplate', $this->data, $this->data['title']);
+        }      
     }
 }

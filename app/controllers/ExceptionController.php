@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\core\View;
 
-class MainController extends Controller
+class ExceptionController extends Controller
 {
     private $view;
     
@@ -16,6 +16,6 @@ class MainController extends Controller
 
     public function actionDefault()
     {
-        $this->view->render('Main');
+        $this->view->render('Exception', 'BasicTemplate');
     }
 }

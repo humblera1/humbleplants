@@ -1,5 +1,8 @@
 /* --------------------1-------------------- */
-
+.first-list a{
+    color: black;
+    text-decoration: none;
+}
 .first-container{
     height: 100vh;
     padding: 1vw;
@@ -96,13 +99,6 @@
     height: 1px;
     background-color: var(--color-primary);
 }
-
-.fade{
-    transition: all 0.4s ease-out;
-    visibility: hidden;
-    opacity: 0;
-    height: 1vw;
-}
 .show {
     visibility: visible;
     opacity: 1;
@@ -110,9 +106,7 @@
     transition: all 0.5s ease-out;
     
 }
-.hide{
-    opacity: 0;
-}
+
 
 @media (min-width: 768px){
     .first-list{
@@ -343,6 +337,18 @@
         position: absolute;
         left: 65%;
         top: 110%
+    }
+    @-moz-document url-prefix(){        
+        [class^="icon"]{            
+            width: 25%;
+        }
+        .icon-sun{
+            width: 20%;
+        }
+        .icon-puzzle{
+            padding-right: 0;
+            
+        }
     }
 }
 
@@ -739,6 +745,7 @@
         height: 100%;
         padding-left: 50%;
     }
+
     .fourth-text-title{
         font-size: clamp(25px, 3vw, 30px);
         
@@ -752,6 +759,19 @@
         font-size: clamp(18px, 2.3vw, 22px);
         padding: 0 5% 0 10%;
         justify-self: end;
+    }
+    @-moz-document url-prefix(){
+        .fourth-wrap .fourth-text{
+            font-size: clamp(18px, 1.8vw, 22px);
+            
+        }
+        .fourth-wrap-reverse .fourth-text{
+            font-size: clamp(18px, 1.8vw, 22px);            
+        }
+        .fourth-wrap-reverse .pic {        
+            padding-left: 20%;
+            width: 150%;
+        }
     }
 }
 @media (min-width:1200px){
@@ -770,6 +790,7 @@
     .fourth-wrap-reverse .fourth-text{
         font-size: clamp(18px, 1.5vw, 25px);
     }
+    
 }
 
 /* --------------------5-------------------- */
@@ -930,12 +951,7 @@
         height: 4vw;
         font-size: clamp(12px, 1vw, 20px);
     }
-
 }
-
-
-
-
 .footer{
     padding-top: 60%;
     display: flex;
@@ -969,7 +985,7 @@
     .copyright{
         position: absolute;
         left: 0;
-        padding-left: 5%;
+        padding-left: 2%;
         padding-bottom: 2%;
     }
         

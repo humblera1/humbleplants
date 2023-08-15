@@ -3,7 +3,7 @@
             <div class="navigation-container">
                 <div class="humblerat"><b>humble</b>rat</div>
             
-                <div class="menu"><img src="pics/menu.svg" alt="" class="menu-image"></div>
+                <div class="menu"><img src="/images/mainpage/menu.svg" alt="menu pic" class="menu-image"></div>
                 <nav class="navbar">
                     <a href="" class="navlink">ГЛАВНАЯ</a>
                     <a href="/catalog" class="navlink">КАТАЛОГ</a>
@@ -14,19 +14,19 @@
                 <div class="circle-1">
                     <div class="circle-2"></div>
                     <div class="inner-center-photo">
-                        <img src="../images/mainpage/succulent.png" alt="succulent" class="succulent">
+                        <img src="/images/mainpage/succulent.png" alt="succulent" class="succulent">
                         
                     </div>                  
                 </div>
                 <div class="inner-center-title"><p><strong>КАТАЛОГ</strong><br>КОМНАТНЫХ РАСТЕНИЙ</p></div>
                 <div class="first-list">
-                    <a class="catalog">КАТАЛОГ</a>
+                    <a href="/catalog" class="catalog">КАТАЛОГ</a>
                     <div class="first-line"></div>
-                    <a class="articles">СТАТЬИ</a>
+                    <a href="/articles" class="articles">СТАТЬИ</a>
                 </div>        
             </div>
             <div class="succulent-container">
-                <img src="../images/mainpage/half.png" alt="succulent" class="half">
+                <img src="/images/mainpage/half.png" alt="succulent" class="half">
             </div>
     </div>
 </div>
@@ -41,21 +41,21 @@
             </div>
             <div class="second-row-one">
                 <div class="text-container"><p>Одни растения нуждаются в ярком свете, другие предпочитают полутень</p></div>
-                <img src="images/mainpage/sun.svg" alt="" class="icon-sun">
+                <img src="/images/mainpage/sun.svg" alt="" class="icon-sun">
             </div>
             <div class="second-row-two">
                 <div class="text-container"><p>Каким-то необходим частый и обильный полив, а для каких-то избыток влаги станет причиной гибели</p></div>
-                <img src="images/mainpage/water.svg" alt="" class="icon-water">
+                <img src="/images/mainpage/water.svg" alt="" class="icon-water">
             </div>
             <div class="second-row-three">
                 
                     <div class="text-container"><p>Некоторые ужасно капризны и потребуют от цветовода большого опыта и должного внимания</p></div>
-                    <img src="images/mainpage/puzzle.svg" alt="" class="icon-puzzle">
+                    <img src="/images/mainpage/puzzle.svg" alt="" class="icon-puzzle">
                
             </div>
         </div>
         <div class="second-image">
-            <img src="images/mainpage/bigimage.png" alt="" class="bigimage">
+            <img src="/images/mainpage/bigimage.png" alt="" class="bigimage">
         </div>
     </div>
 
@@ -75,7 +75,7 @@
                         </div>                        
                     </div>
                     <a href="/catalog/cymbidium" class="third-image-one">
-                        <img src="images/mainpage/final2-1.png" alt="cymbidium pic" class="img-3-1">
+                        <img src="/images/mainpage/final2-1.png" alt="cymbidium pic" class="img-3-1">
                     </a>
                 </div>
                 <div class="third-block"></div>
@@ -89,7 +89,7 @@
                         </div>                        
                     </div>
                     <a href="/catalog/asplenium" class="third-image-two">
-                        <img src="images/mainpage/final2-2.png" alt="asplenium pic" class="img-3-2">
+                        <img src="/images/mainpage/final2-2.png" alt="asplenium pic" class="img-3-2">
                     </a>
                 </div>
                 <div class="third-block"></div>
@@ -103,7 +103,7 @@
                         </div>                        
                     </div>
                     <a href="/catalog/cereus" class="third-image-three">
-                        <img src="images/mainpage/final2-3.png" alt="cereus pic" class="img-3-3">
+                        <img src="/images/mainpage/final2-3.png" alt="cereus pic" class="img-3-3">
                     </a>
                 </div>
                 <div class="third-block"></div>
@@ -117,7 +117,7 @@
                         </div>                        
                     </div>
                     <a href="/catalog/haworthia" class="third-image-four">
-                        <img src="images/mainpage/final2-4.png" alt="haworthia pic" class="img-3-4">
+                        <img src="/images/mainpage/final2-4.png" alt="haworthia pic" class="img-3-4">
                     </a>
                 </div>
                 <div class="third-block"></div>
@@ -131,7 +131,7 @@
                         </div>                        
                     </div>
                     <a href="/catalog/licuala" class="third-image-five">
-                        <img src="images/mainpage/final2-5.png" alt="licuala pic" class="img-3-5">
+                        <img src="/images/mainpage/final2-5.png" alt="licuala pic" class="img-3-5">
                     </a>
                 </div>
                 <div class="third-block-big"></div>
@@ -148,19 +148,19 @@
             <div class="fourth-wrap">
                 <div class="fourth-text">Растения способны оживить ваш интерьер, добавить привычной обстановке уют, комфорт и чистоту.</div>
                 <div class="fourth-pic-one">
-                    <img src="images/mainpage/profit-pic-1.png" alt="pic with plants" class="pic">
+                    <img src="/images/mainpage/profit-pic-1.png" alt="pic with plants" class="pic">
                 </div>
             </div>            
             <div class="fourth-wrap-reverse">
                 <div class="fourth-text">Комнатные растения благотворно влияют на сон и успокаивают нервную систему, выступая домашними психотерапевтами</div>
                 <div class="fourth-pic-two">
-                    <img src="images/mainpage/profit-pic-2.png" alt="another pic with plants" class="pic">
+                    <img src="/images/mainpage/profit-pic-2.png" alt="another pic with plants" class="pic">
                 </div>
             </div>            
             <div class="fourth-wrap">
                 <div class="fourth-text">Они увлажняют воздух и способны удалять до 80% вредных веществ, скапливающихся в помещении</div>
                 <div class="fourth-pic-five">
-                    <img src="images/mainpage/profit-pic-3.png" alt="and another beautiful pic thet represents plants" class="pic">
+                    <img src="/images/mainpage/profit-pic-3.png" alt="and another beautiful pic thet represents plants" class="pic">
                 </div>
             </div>        
     </div>
@@ -169,7 +169,7 @@
 
 <div class="fifth-container">
         <div class="fifth-pic-container">
-            <img src="images/mainpage/5.png" alt=""  class="fifth-pic">
+            <img src="/images/mainpage/5.png" alt=""  class="fifth-pic">
         </div>
 
         <div class="fifth-grid">
@@ -187,23 +187,21 @@
                 <div class="button-container"><input type="submit" value="Отправить" class="fifth-btn"></div>
             </div>
             </form>
-
+            <?php
+            if(isset($_POST['name'])) $name = $_POST['name'];
+            if(isset($_POST['name'])) $email = $_POST['email'];
+            if(isset($_POST['name'])) $message = $_POST['message'];
+            if(isset($_POST['name'])) file_put_contents("././log/log.txt", "{$name}, {$email} \r\n $message \r\n", FILE_APPEND);
+            ?>
        </div>   
     </div>
-
-<!-- **************************** footer ************************** -->
-
-<div class="footer">
+    <div class="footer">
         <div class="copyright">
             <div class="author">humblerat</div>
-            <div class="year">2023</div>
+            <time class="year"><?= date("Y"); ?></time>
         </div>
-        <img src="../images/mainpage/footer.png" alt="" class="footer-image"></div>
-
+        <img src="/images/mainpage/footer.png" alt="" class="footer-image"></div>        
     </div>
-</body>
-</html>
-
-
-
-<link rel="stylesheet" href="../css/Main.css">
+<script src="/js/library.js"></script>
+<script> addMenu();</script>
+<link rel="stylesheet" href="/css/Main.css">

@@ -199,11 +199,12 @@ hr{
         width: 85%;
         height: 100%;
         padding: 0 0% 20% 0%;    
-        transition: all linear 0.6s;
+        transition: filter linear 0.6s;        
     }
-    .plant-img:hover{    
-        filter: brightness(1.2) drop-shadow(-10px 20px 3px var(--color-grey));
+    .plant-img:hover{
+            filter: brightness(1.2) drop-shadow(-10px 20px 3px var(--color-grey));
     }
+
     .right-grid{    
         grid-template-rows: auto 1fr 1fr 1fr 1fr;  
         margin: 10% 0 25% 0;

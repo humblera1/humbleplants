@@ -33,45 +33,22 @@ if($params['difficulty'] === 1){
 
         <div class="center-container">
             <div class="image-container">
-                <img src=<?= "../images/plants/".$params['id'].".png"; ?>  alt="" class="plant-img">
+                <img src=<?= "/images/plants/".$params['id'].".png"; ?>  alt="" class="plant-img">
             </div>
         </div>
-
         <div class="right-grid">
             <div class="care-container">
                 <p class="care">Особенности ухода</p>
             </div>
-
-            <div class="sun-container"><img src="../images/icons/sun-icon.svg" alt="" class="sun-img"></div>
+            <div class="sun-container"><img src="/images/icons/sun-icon.svg" alt="" class="sun-img"></div>
             <div class="sun-text-container"><p><?= $light; ?></p></div>
-
-            <div class="water-container"><img src="../images/icons/water-icon.svg" alt="" class="water-img"></div>
+            <div class="water-container"><img src="/images/icons/water-icon.svg" alt="" class="water-img"></div>
             <div class="water-text-container"><p><?= $watering; ?></p></div>
-
-            <div class="puzzle-container"><img src="../images/icons/puzzle-icon.svg" alt="" class="puzzle-img"></div>
+            <div class="puzzle-container"><img src="/images/icons/puzzle-icon.svg" alt="" class="puzzle-img"></div>
             <div class="puzzle-text-container"><p><?= $difficulty; ?></p></div>
-
         </div>
     </div>
-
     <div class="main-text-container">
         <?php echo strip_tags($params['full_description'], '<hr><p>'); ?>
     </div>
-
-<link rel="stylesheet" href="../css/Plant.css">
-
-
-
-
-
-
-<?php
-
-
-// echo "<pre>";
-// print_r($params);
-// echo "</pre>";
-
-
-// echo strip_tags($params['full_description'], '<hr><p>');
-?>
+<link rel="stylesheet" href="/css/Plant.css">

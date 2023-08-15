@@ -8,11 +8,10 @@ use app\models\CatalogModel;
 
 class CatalogController extends Controller
 {
-    public $plantName;
-    public $model;
-    public $view;
-
-    public $data;
+    
+    private $model;
+    private $view;
+    private $data;
 
     public function __construct()
     {
@@ -23,22 +22,23 @@ class CatalogController extends Controller
     public function actionDefault()
     {         
         $data = json_decode(file_get_contents('php://input'),true);
-        if (!empty($data)){
-            echo json_encode($this->model->getWithFilters($data), JSON_UNESCAPED_UNICODE);
-            // echo $this->model->getWithFilters($data);
-
+        if (!empty($data)){            
+            echo json_encode($this->model->getPlants($data), JSON_UNESCAPED_UNICODE);            
         }else{
-        $this->data = $this->model->getData('SELECT id, name, latin_name, short_description, category FROM catalog ORDER BY category ASC');        
-        $this->view->render('Catalog', 'BasicTemplate', $this->data);}        
+        $this->data = $this->model->getPlants();        
+        $this->view->render('Catalog', 'BasicTemplate', $this->data, 'Каталог');
+        }        
     }
 
     public function actionShowOne(string $plantName)
     {
-
-        $this->data = $this->model->getWithPrepare("SELECT id, name, short_description, full_description, light, watering, difficulty FROM catalog WHERE latin_name = ?", $plantName);
+        $this->data = $this->model->getPlant($plantName)[0];
             
-        if (empty($this->data)) echo 'oops';
-        else $this->view->render('Plant', 'BasicTemplate', $this->data);  
+        if (empty($this->data)){
+            $this->view->render('Exception', 'BasicTemplate');
+        }else{            
+            $this->view->render('Plant', 'BasicTemplate', $this->data, $this->data['name']);
+        }   
     
     }
 

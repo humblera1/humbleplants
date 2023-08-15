@@ -2,9 +2,7 @@
 
 namespace app\core;
 
-//Интерфейс создания соединения с базой данных
-
 interface DbInterface
 {
-    public function getConnection();
+    public function getData(string $query, array $params = []);
 }

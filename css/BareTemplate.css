@@ -2,7 +2,9 @@
     --color-primary: #d7dcd6;
     --color-additional: #f1f0eb;
     --color-grey: #c3c3c3;
+    scrollbar-width: none !important;
 }
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -11,6 +13,7 @@
 body::-webkit-scrollbar{ 
     display: none; 
 }
+
 @font-face {
     font-family: "Comfortaa"; 
     
@@ -19,8 +22,10 @@ body::-webkit-scrollbar{
     font-weight: normal; 
 }
 body{
-    -ms-overflow-style: none;  
-    scrollbar-width: none;
+
+    
+ 
+    
     background-color: var(--color-primary);
     font-family: "Comfortaa";
 }       

@@ -3,21 +3,21 @@
 namespace app\core;
 
 use app\core\DbInterface;
-
-//Класс, имплементирующий DbInterface; используется для создания соединения с БД 
+use PDO;
 
 class Db implements DbInterface{
+
+    private $db;
 
     protected $dsn;
     protected $username;
     protected $password;
-    protected $options;
-
+    protected $options;  
 
     public function __construct(
-        string $dsn,
-        ?string $username = null,
-        ?string $password = null,
+        string $dsn = "mysql:host=localhost;dbname=humbleplants",
+        ?string $username = "root",
+        ?string $password = "4815162342",
         ?array $options = null
     )
     {
@@ -28,8 +28,12 @@ class Db implements DbInterface{
 
     }
 
-    public function getConnection()
+    public function getData(string $query, array $params = [])
     {
-        return new PDO($this->dsn, $this->username, $this->password, $this->options);
+        $this->db = new PDO($this->dsn, $this->username, $this->password, $this->options);
+        $statement = $this->db->prepare($query);
+        $statement->execute($params);
+        
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 }

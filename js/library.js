@@ -1,82 +1,98 @@
 
 
 function makePagination(data, amountPerPage = 9){
+    
     const plants = JSON.parse(data);
+    
     let catalogContainer = document.querySelector('.catalog-container');
     let paginationContainer = document.querySelector('.pagination-container');
-    
-    let charCount = (window.innerWidth < 1200) ? 40 : 50;
-    
-    let currentPage = 1;
-    console.log(currentPage);
-    makeSinglePage(plants, currentPage-1, amountPerPage);
-    makePages(plants, amountPerPage);
-    
-    function makePages(plants, amountPerPage){
-        const pages = Math.ceil(plants.length / amountPerPage);     
 
-        const ul = document.createElement('ul');
-        ul.classList.add('page-numbers');
+
+    if(plants.length === 0) {
+
+        let emptyResult = document.createElement('div');
+        let p = document.createElement('p');
+        p.innerText = 'Ой! Кажется, ничего не нашлось... Попробуйте изменить параметры фильтров';
+        emptyResult.appendChild(p);
+        emptyResult.classList.add('empty-result-container');
+             
+        catalogContainer.innerHTML = '';              
+        catalogContainer.appendChild(emptyResult);
+
+    }else{
+    
+        let charCount = (window.innerWidth < 1200) ? 40 : 50;
         
-        for(let i=0; i<pages; i++){
-            const li = document.createElement('li');
-            li.classList.add('page-number');
-            li.innerText = i+1;
-
-                if (currentPage == i+1) li.classList.add('page-number-active');
-
-                li.addEventListener('click', () => {
-                currentPage = i;
-                
-
-                let anotherNumber = document.querySelector('li.page-number-active');
-                anotherNumber.classList.remove('page-number-active');
-                li.classList.add('page-number-active');
-
-                makeSinglePage(plants, currentPage, amountPerPage);
-            });
-            ul.appendChild(li);
-        }
-        paginationContainer.appendChild(ul);
-    }
-    
-    function makeSinglePage(plants, currentPage, amountPerPage){
+        let currentPage = 1;
+        makeSinglePage(plants, currentPage-1, amountPerPage);
+        makePages(plants, amountPerPage);
         
-        const start = currentPage*amountPerPage;
-        const end = start + amountPerPage;
-        catalogContainer.innerHTML='';
-        
-        const plantsForDisplay = plants.slice(start, end);
-        for (let plant of plantsForDisplay){
+        function makePages(plants, amountPerPage){
+            const pages = Math.ceil(plants.length / amountPerPage);     
+
+            const ul = document.createElement('ul');
+            ul.classList.add('page-numbers');
             
-            const card = makeSingleCard(plant);
-            catalogContainer.appendChild(card);
+            for(let i=0; i<pages; i++){
+                const li = document.createElement('li');
+                li.classList.add('page-number');
+                li.innerText = i+1;
+
+                    if (currentPage == i+1) li.classList.add('page-number-active');
+
+                    li.addEventListener('click', () => {
+                    currentPage = i;
+                    
+
+                    let anotherNumber = document.querySelector('li.page-number-active');
+                    anotherNumber.classList.remove('page-number-active');
+                    li.classList.add('page-number-active');
+
+                    makeSinglePage(plants, currentPage, amountPerPage);
+                });
+                ul.appendChild(li);
+            }
+            paginationContainer.appendChild(ul);
         }
-    }
-    function makeSingleCard(plantData){
-        const card = document.createElement('a');
-        card.href = "/catalog/" + plantData.latin_name;
-        card.classList.add('card-grid');
         
-        const img = document.createElement('img');
-        img.src = '../images/catalog/' + plantData.id + '.png';
-        img.alt = plantData.latin_name + ' ' + 'pic';
-        const image = document.createElement('div');
-        image.classList.add('image-container');
-        image.appendChild(img);
-        card.appendChild(image);
-    
-        const name = document.createElement('div');
-        name.classList.add('name-container');
-        name.innerText = plantData.name;
-        card.appendChild(name);
-    
-        const description = document.createElement('div');
-        description.classList.add('description-container');
-        description.innerText = plantData.short_description.substring(0, charCount) + '...';
-        card.appendChild(description);
-    
-        return card;
+        function makeSinglePage(plants, currentPage, amountPerPage){
+            
+            const start = currentPage*amountPerPage;
+            const end = start + amountPerPage;
+            catalogContainer.innerHTML='';
+            
+            const plantsForDisplay = plants.slice(start, end);
+            for (let plant of plantsForDisplay){
+                
+                const card = makeSingleCard(plant);
+                catalogContainer.appendChild(card);
+            }
+        }
+        function makeSingleCard(plantData){
+            const card = document.createElement('a');
+            card.href = "/catalog/" + plantData.latin_name;
+            card.classList.add('card-grid');
+            
+            const img = document.createElement('img');
+            img.src = '../images/catalog/' + plantData.id + '.png';
+            img.alt = plantData.latin_name + ' ' + 'pic';
+            const image = document.createElement('div');
+            image.classList.add('image-container');
+            image.appendChild(img);
+            card.appendChild(image);
+        
+            const name = document.createElement('div');
+            name.classList.add('name-container');
+            name.innerText = plantData.name;
+            card.appendChild(name);
+        
+            const description = document.createElement('div');
+            description.classList.add('description-container');
+            description.innerText = plantData.short_description.substring(0, charCount) + '...';
+            card.appendChild(description);
+        
+            return card;
+        }
     }
 }
 
@@ -133,7 +149,7 @@ function makeFiltration(){
         filterForm.addEventListener('submit', (event) => {
             event.preventDefault();
             
-            console.log(requestedFilters);            
+                       
             ajax(requestedFilters);
         });
 
@@ -151,9 +167,9 @@ function makeFiltration(){
             body: JSON.stringify(data)
         });
     
-        let result = await response.text();
-            
+        let result = await response.text();            
         makePagination(result);
+        
     }
 }
 
@@ -213,3 +229,23 @@ function addListeners(){
     })
 }
 
+function addMenu(){
+    console.log('hi');
+    let menu = document.querySelector(".menu-image");
+    let firstList = document.querySelector(".first-list");
+    let body = document.body;
+
+    menu.addEventListener('click', () => {
+        firstList.classList.toggle('show');
+    });
+    body.addEventListener('click', event => {
+        if (event.target !== menu && event.target.closest('.first-list') !== firstList){
+            console.log(event.target);
+            firstList.classList.remove('show');
+        } 
+       
+    })
+
+
+
+}
