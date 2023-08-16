@@ -1,6 +1,10 @@
 [class*="container"]{
     padding: 0;   
 }
+.footer-container{
+    padding-left: 1vw;
+    padding-bottom: 1vw;
+}
 .content-grid{
     grid-template-columns: 1fr;
     width: 100vw;

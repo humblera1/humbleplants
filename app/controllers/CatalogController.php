@@ -30,14 +30,14 @@ class CatalogController extends Controller
         }        
     }
 
-    public function actionShowOne(string $plantName)
-    {
-        $this->data = $this->model->getPlant($plantName)[0];
+    public function actionShowOne($plantName)
+    {   
+        $this->data = $this->model->getPlant($plantName);
             
         if (empty($this->data)){
             $this->view->render('Exception', 'BasicTemplate');
         }else{            
-            $this->view->render('Plant', 'BasicTemplate', $this->data, $this->data['name']);
+            $this->view->render('Plant', 'BasicTemplate', $this->data[0], $this->data[0]['name']);
         }   
     
     }

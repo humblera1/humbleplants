@@ -1,5 +1,40 @@
 /*----------------------------------------------------*/
+:root {
+    --color-primary: #d7dcd6;
+    --color-additional: #f1f0eb;
+    --color-grey: #c3c3c3;
+    scrollbar-width: none !important;
+}
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+body::-webkit-scrollbar{ 
+    display: none; 
+}
 
+@font-face {
+    font-family: "Comfortaa";    
+    src: url("../fonts/Comfortaa-VariableFont_wght.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+body{  
+    background-color: var(--color-primary);
+    font-family: "Comfortaa";
+}       
+[class*="container"]{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-sizing: border-box;
+    padding: 5% 10%;   
+}
+[class*="grid"]{
+    display:grid;
+}
 .super-grid{
     min-height: 100vh;
     grid-template-rows: auto auto auto;
@@ -28,11 +63,6 @@
     padding: 0;
 
 }
-/* .arrow-link-container{
-    border-right: 3px solid rgb(190, 190, 190);
-    border-left: 3px solid rgb(190, 190, 190);
-    border-radius: 0px;
-} */
 footer{
     align-self: flex-end;
 }

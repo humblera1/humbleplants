@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/Catalog.css">
 <div class="welcome-container">Добро пожаловать в наш каталог!</div>
 <div class="page-container">
     <div class="page-grid">
@@ -75,7 +76,6 @@
         </div>
     </div>    
 </div>
-<link rel="stylesheet" href="/css/Catalog.css">
 <script src="/js/library.js"></script>
 <?php $data = json_encode($params); ?>
 <script> 

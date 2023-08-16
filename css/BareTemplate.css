@@ -4,7 +4,6 @@
     --color-grey: #c3c3c3;
     scrollbar-width: none !important;
 }
-
 * {
 	padding: 0px;
 	margin: 0px;
@@ -15,17 +14,12 @@ body::-webkit-scrollbar{
 }
 
 @font-face {
-    font-family: "Comfortaa"; 
-    
+    font-family: "Comfortaa";    
     src: url("../fonts/Comfortaa-VariableFont_wght.ttf") format("truetype"); 
     font-style: normal; 
     font-weight: normal; 
 }
-body{
-
-    
- 
-    
+body{  
     background-color: var(--color-primary);
     font-family: "Comfortaa";
 }       

@@ -24,13 +24,13 @@ class ArticlesController extends Controller
         $this->view->render('Articles', 'BasicTemplate', $this->data, 'Статьи');
     }
 
-    public function actionShowOne(int $id)
-    {
-        $this->data = $this->model->getArticle($id)[0];            
-        if (empty($this->data)){
-            $this->view->render('Exception', 'BasicTemplate');
+    public function actionShowOne($id)
+    {   
+        if (ctype_digit($id)) $this->data = $this->model->getArticle($id);                   
+        if (!empty($this->data)){
+            $this->view->render('Article', 'BasicTemplate', $this->data[0], $this->data[0]['title']);
         }else{
-            $this->view->render('Article', 'BasicTemplate', $this->data, $this->data['title']);
-        }      
+            $this->view->render('Exception', 'BasicTemplate');
+        }           
     }
 }

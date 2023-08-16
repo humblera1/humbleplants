@@ -20,7 +20,7 @@ class Route
         $request = $_SERVER['REQUEST_URI'];
         if (str_ends_with($request, '/') && strrpos($request, '/') !== 0){         
             $request = rtrim($request, '/');
-            header("HTTPS/1.1 301 Moved Permanently");
+            // header("HTTPS/1.1 301 Moved Permanently");
             header("Location: $request");            
         }        
         $this->address = explode('/', ltrim($request, '/'));

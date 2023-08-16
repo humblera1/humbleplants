@@ -1,8 +1,8 @@
+<link rel="stylesheet" href="/css/Main.css">
 <div class="first-container">
         <div class="first-grid">
             <div class="navigation-container">
-                <div class="humblerat"><b>humble</b>rat</div>
-            
+                <div class="humblerat"><b>humble</b>rat</div>            
                 <div class="menu"><img src="/images/mainpage/menu.svg" alt="menu pic" class="menu-image"></div>
                 <nav class="navbar">
                     <a href="" class="navlink">ГЛАВНАЯ</a>
@@ -30,9 +30,6 @@
             </div>
     </div>
 </div>
-
-<!-- **************************** 2 ************************** -->
-
 <div class="second-container">
         <div class="second-content-container">
             <div class="second-title-container">Зачем был создан этот сайт?</div>
@@ -47,20 +44,15 @@
                 <div class="text-container"><p>Каким-то необходим частый и обильный полив, а для каких-то избыток влаги станет причиной гибели</p></div>
                 <img src="/images/mainpage/water.svg" alt="" class="icon-water">
             </div>
-            <div class="second-row-three">
-                
+            <div class="second-row-three">                
                     <div class="text-container"><p>Некоторые ужасно капризны и потребуют от цветовода большого опыта и должного внимания</p></div>
-                    <img src="/images/mainpage/puzzle.svg" alt="" class="icon-puzzle">
-               
+                    <img src="/images/mainpage/puzzle.svg" alt="" class="icon-puzzle">               
             </div>
         </div>
         <div class="second-image">
             <img src="/images/mainpage/bigimage.png" alt="" class="bigimage">
         </div>
     </div>
-
-<!-- **************************** 3 ************************** -->
-
 <div class="third-container">
         <div class="third-grid">
             <div class="third-title">
@@ -138,9 +130,6 @@
             </div>
         </div>
     </div>
-
-<!-- **************************** 4 ************************** -->
-
 <div class="fourth-container">
             <div class="fourth-wrap-title">
                 <div class="fourth-text-title"><p>Ещё не решили, стоит ли вам завести цветы у себя в доме?</p><br><p><b>Мы поможем и с этим!</b></p></div>
@@ -164,26 +153,19 @@
                 </div>
             </div>        
     </div>
-
-<!-- **************************** 5 ************************** -->
-
 <div class="fifth-container">
         <div class="fifth-pic-container">
             <img src="/images/mainpage/5.png" alt=""  class="fifth-pic">
         </div>
-
         <div class="fifth-grid">
             <form method='post'>                                
             <div class="form">
-                <div class="fifth-text-container"><p>Обратная связь</p></div>
-                
+                <div class="fifth-text-container"><p>Обратная связь</p></div>                
                 <div class="fields-container">
                     <input type="text" name="name" class="field-name" placeholder="Ваше имя..." required>
                     <input type="email" name="email" class="field-email" placeholder="Ваш email..." required>
                     <input type="text" name="message" class="field-comment" placeholder="Ваши пожелания..." required>
-
                 </div>
-
                 <div class="button-container"><input type="submit" value="Отправить" class="fifth-btn"></div>
             </div>
             </form>
@@ -204,4 +186,3 @@
     </div>
 <script src="/js/library.js"></script>
 <script> addMenu();</script>
-<link rel="stylesheet" href="/css/Main.css">

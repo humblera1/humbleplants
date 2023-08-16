@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/Articles.css">
 <div class="page-container">
 <div class="page-title-container"><h1>Добро пожаловать на страницу статей</h1></div>    
     <div class="articles-container">   
@@ -18,4 +19,3 @@
         <?php endforeach; ?>  
     </div>
 </div>
-<link rel="stylesheet" href="/css/Articles.css">

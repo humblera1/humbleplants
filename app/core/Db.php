@@ -15,9 +15,9 @@ class Db implements DbInterface{
     protected $options;  
 
     public function __construct(
-        string $dsn = "mysql:host=localhost;dbname=humbleplants",
+        string $dsn = "mysql:host=localhost;dbname=humbleplants;charset=UTF8",
         ?string $username = "root",
-        ?string $password = "4815162342",
+        ?string $password = "282028",
         ?array $options = null
     )
     {

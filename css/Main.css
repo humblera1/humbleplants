@@ -6,6 +6,7 @@
 .first-container{
     height: 100vh;
     padding: 1vw;
+    padding-bottom: 0;
 }
 .first-grid{
     border-radius: 5vw;
@@ -103,12 +104,12 @@
     visibility: visible;
     opacity: 1;
     transform: none;
-    transition: all 0.5s ease-out;
-    
+    transition: all 0.5s ease-out;    
 }
-
-
 @media (min-width: 768px){
+    .first-container{
+        padding: 1vw;
+    }
     .first-list{
         visibility: hidden;
     }

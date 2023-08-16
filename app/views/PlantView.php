@@ -1,36 +1,32 @@
+<link rel="stylesheet" href="/css/Plant.css">
 <?php
-
-if($params['light'] === 1){
+if($params['light'] == 1){
     $light = 'Растение <strong>не требовательно к освещению</strong> и переносит полутень';
-}elseif($params['light'] === 2){
+}elseif($params['light'] == 2){
     $light = 'Растение любит свет, но может перенести и <strong>полутень</strong>';
-}elseif($params['light'] === 3){
+}elseif($params['light'] == 3){
     $light = 'Растение нуждается в <strong>ярком освещении</strong>';
 }
-
-if($params['watering'] === 1){
+if($params['watering'] == 1){
     $watering = 'Способно долгое время <strong>обходиться без влаги</strong>';
-}elseif($params['watering'] === 2){
+}elseif($params['watering'] == 2){
     $watering = 'Ему необходим регулярный <strong>умеренный полив</strong>';
-}elseif($params['watering'] === 3){
+}elseif($params['watering'] == 3){
     $watering = 'Ему необходим систематический и <strong>обильный полив</strong>';
 }
-
-if($params['difficulty'] === 1){
+if($params['difficulty'] == 1){
     $difficulty = 'Неприхотливо и отлично подходит <strong>начинающим цветоводам</strong>';
-}elseif($params['difficulty'] === 2){
+}elseif($params['difficulty'] == 2){
     $difficulty = 'Неприхотливо, но имеет свои <strong>особенности</strong> ухода';
-}elseif($params['difficulty'] === 3){
+}elseif($params['difficulty'] == 3){
     $difficulty = 'Капризно и требует внимания и <strong>особого ухода</strong>';
 }
-
 ?>
 <div class="content-grid">
         <div class="left-grid">
             <div class="title-container"><h1><?php echo htmlspecialchars($params['name']); ?></h1></div>
             <div class="description-container"><p><?= htmlspecialchars($params['short_description']); ?></p></div>
         </div>
-
         <div class="center-container">
             <div class="image-container">
                 <img src=<?= "/images/plants/".$params['id'].".png"; ?>  alt="" class="plant-img">
@@ -51,4 +47,4 @@ if($params['difficulty'] === 1){
     <div class="main-text-container">
         <?php echo strip_tags($params['full_description'], '<hr><p>'); ?>
     </div>
-<link rel="stylesheet" href="/css/Plant.css">
+
